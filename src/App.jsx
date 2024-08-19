@@ -6,11 +6,13 @@ import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import LoaginPopup from "./components/LoginPopup/LoaginPopup";
-
+import { ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   const [loginModal, setLoginModal] = useState(false);
   return (
     <>
+    <ToastContainer/>
       {loginModal ? <LoaginPopup setLoginModal={setLoginModal} /> : <></>}
       <div className='app'>
         <Navbar setLoginModal={setLoginModal} />
