@@ -4,7 +4,7 @@ import { assets } from "../../assets/frontend_assets/assets";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 const Navbar = ({ setLoginModal }) => {
-  const { totalCartAmount } = useContext(StoreContext);
+  const { totalCartAmount, token, logOut } = useContext(StoreContext);
   const [menu, setMenu] = useState("home");
   return (
     <div className='navbar'>
@@ -50,7 +50,23 @@ const Navbar = ({ setLoginModal }) => {
 
           <div className={totalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
-        <button onClick={() => setLoginModal(true)}>sign in</button>
+        {!token ? (
+          <button onClick={() => setLoginModal(true)}>sign in</button>
+        ) : (
+          <div className='navbar-profile'>
+            <img src={assets.profile_icon} alt='profile-icon' />
+            <ul className=' nav-profile-dropdown'>
+              <li>
+                <img src={assets.bag_icon} alt='bag-icon' /> <p>Orders</p>
+              </li>
+              <hr />
+              <li onClick={logOut}>
+                {" "}
+                <img src={assets.logout_icon} alt='logout-icon' /> <p>Logout</p>
+              </li>{" "}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

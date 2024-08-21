@@ -8,6 +8,9 @@ import Footer from "./components/Footer/Footer";
 import LoaginPopup from "./components/LoginPopup/LoaginPopup";
 import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Verify from "./pages/verify/verify";
+import MyOrders from "./pages/MyOrders/MyOrders";
+
 const App = () => {
   const [loginModal, setLoginModal] = useState(false);
   return (
@@ -20,6 +23,8 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<PlaceOrder />} />
+          <Route path='/verify' element={<Verify />} />
+          <Route path='/myorders' element={<MyOrders />} />
         </Routes>
       </div>
       <Footer />
