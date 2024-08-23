@@ -1,13 +1,16 @@
 import React from "react";
 import "./Footer.css";
 import { assets } from "../../assets/frontend_assets/assets";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className='footer' id='footer'>
       <div className='footer-content'>
         <div className='footer-content-left'>
-          <img src={assets.logo} alt='logo' />
+          <p>
+            Yummys<span>D</span>oor
+          </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
             placeat odit velit vero atque maxime fugiat. Cum magnam tenetur
@@ -16,9 +19,15 @@ const Footer = () => {
           </p>
 
           <div className='footer-social-icons'>
-            <img src={assets.facebook_icon} alt='facebook icon' />
-            <img src={assets.twitter_icon} alt='facebook icon' />
-            <img src={assets.linkedin_icon} alt='facebook icon' />
+            <Link to='https://www.facebook.com/hossainislam.nur.9'>
+              <img src={assets.facebook_icon} alt='' />
+            </Link>
+            <Link to='https://x.com/Hossain08343121'>
+              <img src={assets.twitter_icon} alt='' />
+            </Link>
+            <Link to='https://www.linkedin.com/in/hossain-ahmed-163b11236'>
+              <img src={assets.linkedin_icon} alt='' />
+            </Link>
           </div>
         </div>
         <div className='footer-content-center'>
@@ -34,12 +43,15 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+88-013-004-16147</li>
-            <li>contact@oneshop.com</li>
+            <li>contact@yummysdoor.com</li>
           </ul>
         </div>
       </div>
       <hr />
-      <p className='copyright'>Copyright {new Date().getFullYear()} © oneshop.com - All Right Reserved.</p>
+      <p className='copyright'>
+        Copyright {new Date().getFullYear()} © yummysdoor.com- All Right
+        Reserved.
+      </p>
     </footer>
   );
 };

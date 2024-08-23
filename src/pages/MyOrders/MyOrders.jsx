@@ -28,21 +28,33 @@ const MyOrders = () => {
     }
   }, [token]);
 
-  return <div className="my-orders">
-    <h2>My orders</h2>
-    <div className="container">
-      {orderData.map((order,i)=>(
-        <div key={i}>
-<img src={assets.parcel_icon} alt="order-icon" />
-<p>{order.items.map((item,i)=>{
-if(i === order.items.length-1){
-  return item.name+" x "+item.quantity
-}
-})}</p>
-        </div>
-      ))}
+  return (
+    <div className='my-orders'>
+      <h2>My orders</h2>
+      <div className='container'>
+        {orderData.map((order, i) => (
+          <div key={i} className="my-orders-order">
+            <img src={assets.parcel_icon} alt='order-icon' />
+            <p>
+              {order.items.map((item, i) => {
+                if (i === order.items.length - 1) {
+                  return item.name + " x " + item.quantity;
+                }else{
+                  return item.name + " x " + item.quantity+", ";
+                }
+              })}
+            </p>
+            <p>
+              ${order.amount}
+            </p>
+            <p>Items: {order.items.length}</p>
+            <p><span>&#x25cf;</span><b>{order.status}</b></p>
+            <button onClick={fetchOrders()}>Tacck Order</button>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default MyOrders;

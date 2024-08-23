@@ -1,15 +1,16 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/frontend_assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 const Navbar = ({ setLoginModal }) => {
+  const navigate = useNavigate()
   const { totalCartAmount, token, logOut } = useContext(StoreContext);
   const [menu, setMenu] = useState("home");
   return (
     <div className='navbar'>
       <Link to='/'>
-        <img src={assets.logo} alt='' className='logo' />
+      <p className="logo">Yummys<span>D</span>oor</p>
       </Link>
       <ul className='navbar-menu'>
         <Link
@@ -56,7 +57,7 @@ const Navbar = ({ setLoginModal }) => {
           <div className='navbar-profile'>
             <img src={assets.profile_icon} alt='profile-icon' />
             <ul className=' nav-profile-dropdown'>
-              <li>
+              <li onClick={()=>navigate('/myorders')}>
                 <img src={assets.bag_icon} alt='bag-icon' /> <p>Orders</p>
               </li>
               <hr />

@@ -15,7 +15,7 @@ const StoreContextProvider = (props) => {
   const logOut = () => {
     localStorage.removeItem("token");
     setToken("");
-    navigate("/home");
+    navigate("/");
   };
 
   const getAllFoods = async () => {

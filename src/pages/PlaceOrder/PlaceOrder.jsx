@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import {toast} from "react-toastify"
 
 const PlaceOrder = () => {
   const { totalCartAmount, food_list, cartItems, token, url } =
     useContext(StoreContext);
-
+const navigate = useNavigate()
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -56,6 +58,16 @@ const PlaceOrder = () => {
       alert("Error")
     }
   };
+
+  useEffect(()=>{
+    if(!token){
+navigate('/cart')
+toast.error("Login please to get access")
+    }else if(totalCartAmount()===0){
+      navigate('/cart')
+      toast.error("No cart item add,Add now!")
+    }
+  })
 
   return (
     <form onSubmit={handlePlaceOrder} className='place-order'>

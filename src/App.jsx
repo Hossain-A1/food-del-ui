@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./components/navbar/navbar";
+
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
@@ -10,6 +10,7 @@ import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Verify from "./pages/verify/verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
   const [loginModal, setLoginModal] = useState(false);
