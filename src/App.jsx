@@ -8,12 +8,13 @@ import Footer from "./components/Footer/Footer";
 import LoaginPopup from "./components/LoginPopup/LoaginPopup";
 import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Verify from "./pages/verify/verify";
+import Verify from "./pages/Verify/Verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
   const [loginModal, setLoginModal] = useState(false);
+
   return (
     <>
     <ToastContainer/>
