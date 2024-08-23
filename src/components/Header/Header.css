@@ -1,8 +1,10 @@
 .header {
-  height: 34vw;
+  background-color: red;
+  height: 30vw;
+
   margin: 30px auto;
-  background: url("header_img.png") no-repeat;
-  background-size: contain;
+  background: url("../../assets//frontend_assets/hero.png") no-repeat;
+  background-size: cover;
   position: relative;
 }
 .header-contents {
@@ -41,6 +43,9 @@
   }
 }
 @media (max-width: 750px) {
+  .header {
+    height: 40vw;
+  }
   .header-contents {
     max-width: 75%;
   }
